@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  width: 7rem;
+  height: 7rem;
+}
+
+header {
+  /* background-color: aqua; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.logo-link {
+  display: flex;
+  gap: 3rem;
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links-ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-li {
+  list-style: none;
+}
+
+.features-section {
+  background: #EEF4F7;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.services {
+  /* border: 2px solid red; */
+}
