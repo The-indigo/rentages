@@ -36,6 +36,6 @@ section {
 .computer {
   background-color: white;
   padding: 2rem;
-  width: 95%;
-
+  flex-basis: 30%;
+  min-width: 20rem;
 }
