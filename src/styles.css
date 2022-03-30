@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+section {
+  background: #EEF4F7;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+}
+
+.computer-image {
+  /* height: 50%; */
+  width: 50%;
+}
+
+.computers {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-flow: row wrap;
+  justify-content: center;
+
+}
+
+.computer {
+  background-color: white;
+  padding: 2rem;
+  width: 95%;
+
+}

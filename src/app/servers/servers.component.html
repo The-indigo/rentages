@@ -1,0 +1,15 @@
+<section *ngIf="isLoading===false">
+  <div class="computers">
+    <div class="computer" *ngFor="let server of servers">
+      <img class="computer-image" src={{server.imageUrl}} alt="">
+      <p>{{server.description}}</p>
+      <p>{{server.price}}</p>
+      <p>{{server.inUse}}</p>
+      <a routerLink="/computers/{{server._id}}"> See more</a>
+      <span *ngIf="isLoggedIn"><button>Add to Rentals</button></span>
+
+    </div>
+  </div>
+  <hr>
+</section>
+<app-footer *ngIf="isLoading===false"></app-footer>

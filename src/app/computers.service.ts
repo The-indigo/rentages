@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class ComputersService {
-  private baseUrl = '127.0.0.1:8200/api/computers'
+  private baseUrl = 'https://rentcomputers.herokuapp.com/api/computers'
   httpOptions = {
     headers: new HttpHeaders({
        'Content-Type': 'application/json',
@@ -24,6 +24,9 @@ export class ComputersService {
   {
     return this.http.get<Computer[]>(`${this.baseUrl}` );
   }
+  getAComputer(id:string): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/${id}`)
+  }
 
   addComputers(computer:Computer): Observable<Computer>{
     this.authService.loadToken();
@@ -33,7 +36,7 @@ export class ComputersService {
   updateComputer(computer: Computer): Observable<Computer>
   {
     this.authService.loadToken();
-    return this.http.post<Computer>(`${this.baseUrl}/edit/${computer.id}`, computer, this.httpOptions);
+    return this.http.post<Computer>(`${this.baseUrl}/edit/${computer._id}`, computer, this.httpOptions);
   }
 
   deleteBook(id: any): Observable<Computer>

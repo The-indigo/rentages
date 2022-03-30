@@ -4,29 +4,28 @@ import { Computer } from '../computers';
 import { ComputersService } from '../computers.service';
 
 @Component({
-  selector: 'app-laptops',
-  templateUrl: './laptops.component.html',
-  styleUrls: ['./laptops.component.css']
+  selector: 'app-servers',
+  templateUrl: './servers.component.html',
+  styleUrls: ['./servers.component.css']
 })
-export class LaptopsComponent implements OnInit {
+export class ServersComponent implements OnInit {
 
-  laptops: Computer[] = []
-    isLoading: boolean = false;
+  servers: Computer[] = []
+  isLoading: boolean = false;
    isLoggedIn = this.authService.isloggedIn()
   constructor(private computerService:ComputersService, private authService:AuthService) { }
 
-  
-  getLaptops(): void{
-      this.isLoading=true
+  getServers(): void{
+          this.isLoading = true;
     this.computerService.getComputers().subscribe(data => {
       console.log(data)
-      this.laptops = data.filter((n) => n.isLaptop == true)
-            this.isLoading=false
+      this.servers = data.filter((n) => n.isServer == true)
+            this.isLoading = false;
     })
   }
 
   ngOnInit(): void {
-    this.getLaptops()
+    this.getServers()
+    
   }
-
 }

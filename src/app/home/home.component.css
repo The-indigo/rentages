@@ -1,0 +1,14 @@
+h4 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.features-description {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services {
+  /* border: 2px solid red; */
+}

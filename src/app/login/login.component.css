@@ -1,0 +1,65 @@
+form {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  size: 70%;
+
+}
+
+input,
+select {
+  font-size: 100%;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.input-form {
+  border-radius: .7rem;
+  outline: none;
+  border: solid 1px #ccc;
+  padding: .62rem;
+  width: 90%;
+}
+
+button {
+  color: white;
+  padding: .7rem .9rem;
+  border: none;
+  border-radius: .6rem;
+  background: #56c6c6;
+  cursor: pointer;
+  width: 90%;
+}
+
+label {
+  margin-bottom: .3rem;
+}
+
+.error {
+  font-size: .8rem;
+  color: tan;
+}
+
+
+.input-div {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width:60rem) {
+  .input-form {
+    width: 50%;
+  }
+
+  button {
+    width: 50%;
+  }
+}

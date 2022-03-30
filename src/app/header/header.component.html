@@ -1,0 +1,33 @@
+<header>
+  <div class="nav-container">
+
+    <div class="logo-link">
+      <a routerLink="/home"><img src="../assets/Logog.png" alt=""></a>
+      <a class="computer-rentals-text" routerLink="/home">Computer Rentals</a>
+    </div>
+
+
+    <button class="menu-button" (click)="showMenu()" aria-expanded="false" aria-controls="nav-a">
+      <fa-icon *ngIf="!menuOpen" [icon]="faHamburger"></fa-icon>
+      <fa-icon *ngIf="menuOpen" [icon]="faClose"></fa-icon>
+    </button>
+    <div id="nav-a" class="nav-a" [ngClass]="{'open':menuOpen }">
+      <div class="navigate">
+        <a class="nav-link" routerLink="/laptops">Laptops</a>
+        <a class="nav-link" routerLink="/desktops">Desktop</a>
+        <a class="nav-link" routerLink="/servers">Servers</a>
+      </div>
+      <div class="navigate">
+        <a *ngIf='isLoggedIn' (click)='logout()' class="nav-link auth-button">Logout</a>
+        <a *ngIf='!isLoggedIn' class="auth-button nav-link  " role="button" routerLink="/login">Log In</a>
+        <a *ngIf='!isLoggedIn' class="auth-button signup" role="button" routerLink="/signup">Sign Up</a>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+</header>

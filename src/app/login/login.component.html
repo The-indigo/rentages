@@ -1,0 +1,37 @@
+<section>
+  <p class="error" *ngIf="errorMessage">
+    {{errorMessage}}
+  </p>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="input-div">
+
+      <label for="username"> Username:</label>
+      <div>
+        <input id="username" class="input-form" type="text" formControlName="username" name="username">
+        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+          <div class="error" *ngIf="username?.errors?.['required']">
+            Userame is required.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="input-div">
+
+      <label for="password"> Password:</label>
+      <div>
+        <input id="password" class="input-form" type="password" formControlName="password" name="password">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <div class="error" *ngIf="password?.errors?.['required']">
+            Password is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+  <hr>
+</section>
+<!-- <app-footer></app-footer> -->

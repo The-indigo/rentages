@@ -1,5 +1,5 @@
 export interface Computer{
-    id: string;
+    _id: string;
     imageUrl: string;
     description: string;
     price: number;

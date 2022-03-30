@@ -1,1 +1,18 @@
-<p>laptops works!</p>
+<section *ngIf="isLoading===false">
+  <div class="computers">
+    <div class="computer" *ngFor="let laptop of laptops">
+      <img class="computer-image" src={{laptop.imageUrl}} alt="">
+      <p>{{laptop.description}}</p>
+      <p>{{laptop.price}}</p>
+      <p>{{laptop.inUse}}</p>
+      <a routerLink="/computers/{{laptop._id}}"> See more</a>
+      <span *ngIf="isLoggedIn"><button>Add to Rentals</button></span>
+
+    </div>
+  </div>
+  <hr>
+</section>
+<app-footer *ngIf="isLoading===false"></app-footer>
+<div *ngIf="isLoading">
+  <h4>isLoading......</h4>
+</div>
