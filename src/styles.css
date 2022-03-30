@@ -38,4 +38,5 @@ section {
   padding: 2rem;
   flex-basis: 30%;
   min-width: 20rem;
+  text-align: center;
 }

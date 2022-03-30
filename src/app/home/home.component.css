@@ -1,3 +1,9 @@
+.article-h5 {
+  margin: 1rem 0;
+  font-size: medium;
+  font-weight: 700;
+}
+
 h4 {
   font-weight: bold;
   text-align: center;
@@ -11,4 +17,8 @@ h4 {
 
 .services {
   /* border: 2px solid red; */
+}
+
+fa-icon {
+  color: rgb(235, 189, 130);
 }
