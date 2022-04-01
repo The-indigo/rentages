@@ -1,5 +1,6 @@
 <section *ngIf="isLoading===false">
   <div class="computers">
+
     <div class="computer" *ngFor="let server of servers">
       <img class="computer-image" src={{server.imageUrl}} alt="">
       <p>{{server.description}}</p>
