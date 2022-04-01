@@ -5,8 +5,8 @@
       <p>{{desktop.description}}</p>
       <p>{{desktop.price}}</p>
       <p>{{desktop.inUse}}</p>
-      <a routerLink="/computers/{{desktop._id}}"> See more</a>
-      <span *ngIf="isLoggedIn"><button>Add to Rentals</button></span>
+      <a class="see-more" routerLink="/computers/{{desktop._id}}"> See more</a>
+      <span *ngIf="isLoggedIn"><button class="add-button">Add to Rentals</button></span>
     </div>
   </div>
   <hr>

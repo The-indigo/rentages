@@ -1,0 +1,21 @@
+button {
+  padding: .5rem .9rem;
+  border-radius: 1rem;
+  background: #56c6c6;
+  color: wheat;
+  border: none;
+}
+
+.details-img {
+  background-color: white;
+  /* padding: 2rem; */
+}
+
+img {
+  width: 100%;
+
+}
+
+.n {
+  /* padding: 0 2rem; */
+}

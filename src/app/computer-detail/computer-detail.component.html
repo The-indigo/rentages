@@ -1,14 +1,17 @@
-<div * ngIf="error">
-  <p>{{error}}</p>
-</div>
-<div *ngIf="computer">
-  <h4>Details</h4>
-  <img src={{computer!.imageUrl}} alt="">
-  <div>
-    <p>{{computer.description}}</p>
-    <p>{{computer.price}}</p>
+<section>
+  <div * ngIf="error">
+    <p>{{error}}</p>
   </div>
-</div>
-<div>
-  <button type="button" (click)="goBack()">Go back</button>
-</div>
+  <div class="n" *ngIf="computer">
+    <div class="details-img">
+      <img src={{computer!.imageUrl}} alt="">
+    </div>
+    <div class="details-desc">
+      <p>{{computer.description}}</p>
+      <p>{{computer.price}}</p>
+    </div>
+  </div>
+  <div>
+    <button class="" type="button" (click)="goBack()">Go back</button>
+  </div>
+</section>

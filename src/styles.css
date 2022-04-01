@@ -12,6 +12,15 @@ a {
   text-decoration: none;
 }
 
+.add-button {
+  color: white;
+  background-color: #56c6c6;
+  margin-left: .5rem;
+  border-radius: .6rem;
+  padding: .5rem;
+  border: none;
+}
+
 section {
   background: #EEF4F7;
   padding-top: 1rem;
