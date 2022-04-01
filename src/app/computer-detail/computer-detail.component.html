@@ -2,7 +2,7 @@
   <div * ngIf="error">
     <p>{{error}}</p>
   </div>
-  <div class="n" *ngIf="computer">
+  <div class="details-div" *ngIf="computer">
     <div class="details-img">
       <img src={{computer!.imageUrl}} alt="">
     </div>
@@ -10,9 +10,11 @@
       <p>{{computer.description}}</p>
       <p>{{computer.price}}</p>
     </div>
-    <div class="back-button">
-      <button class="" type="button" (click)="goBack()">Go back</button>
+    <div>
+      <button class="back-button" type="button" (click)="goBack()">Go back</button>
+      <button class="rent" type="button">Rent</button>
     </div>
+
   </div>
 
 </section>
