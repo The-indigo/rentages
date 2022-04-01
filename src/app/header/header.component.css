@@ -6,6 +6,11 @@ a {
   color: black;
 }
 
+a:hover {
+  cursor: pointer;
+  color: cornsilk;
+}
+
 .nav-container {
   display: flex;
   /* justify-content: space-between; */

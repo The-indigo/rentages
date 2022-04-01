@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
         next:( data) => {
                     console.log('data is',data)
           if (data.success) {
-          this.authService.storeUserData(data.token, data.user)
-          this.router.navigateByUrl('home');
+            this.authService.storeUserData(data.token, data.user)
+             window.location.reload()
+            this.router.navigateByUrl('home');
         } else {
           this.errorMessage="Authentication Error. Try again"
      }
