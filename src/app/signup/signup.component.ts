@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
 
@@ -12,7 +13,7 @@ import { User } from '../user';
 export class SignupComponent implements OnInit {
   public user = new User()
   errorMessage?:string
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService, private router:Router) { }
 
   signupForm = new FormGroup({
     username: new FormControl(null, Validators.required),
@@ -29,7 +30,26 @@ export class SignupComponent implements OnInit {
       this.user.username = this.username.value
       this.user.password = this.password.value
       this.user.email=this.email.value
-    this.authService.register (this.user).subscribe(users=>console.log(users))
+      this.authService.register(this.user).subscribe(
+        {
+        next:( data) => {
+                    console.log('data is',data)
+          if (data.success) {
+            this.authService.storeUserData(data.token, data.user)
+            this.router.navigateByUrl('login');
+            window.location.reload()
+
+        } else {
+          this.errorMessage="There was an Error Signing you up."
+     }
+        },
+        error: (error) => {
+          console.log("error from comp", error)
+         this.errorMessage=error
+        } 
+        
+      } 
+      )
     }
     
   }
