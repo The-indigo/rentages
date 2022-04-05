@@ -27,7 +27,6 @@ export class AuthService {
   authenticate(user:User): Observable<any>{
     let data = this.http.post<any>(`${this.authUrl}/login`, user, this.httpOptions).pipe(
       catchError(err => { 
-        console.log("Ah error i've catch you",err);
         return throwError(() => new Error(err.error.message || "Oops somethng went wrong."))
       })
    )
@@ -37,7 +36,12 @@ export class AuthService {
   
 
   register(user: User): Observable<any>{
-    return this.http.post<any>(`${this.authUrl}/register`,user,this.httpOptions)
+    let data= this.http.post<any>(`${this.authUrl}/register`,user,this.httpOptions).pipe(
+      catchError(err => { 
+        return throwError(() => new Error(err.error.message || "Oops somethng went wrong."))
+      })
+   )
+    return data
   }
 
   storeUserData(token: any, user:User): void{
