@@ -1,4 +1,8 @@
-<section *ngIf="isLoading===false">
+<div *ngIf="errorMessage">
+  <p>{{errorMessage}}</p>
+</div>
+
+<section *ngIf="!errorMessage && isLoading===false">
   <div class="computers">
     <div class="computer" *ngFor="let laptop of laptops">
       <img class="computer-image" src={{laptop.imageUrl}} alt="">

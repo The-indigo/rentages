@@ -1,6 +1,6 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Computer } from 'src/app/computers';
 import { AuthService } from './auth.service';
 
@@ -8,7 +8,8 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class ComputersService {
-  private baseUrl = 'https://rentcomputers.herokuapp.com/api/computers'
+  private baseUrl = 'http://192.168.1.9:3000/api/computers'
+    //'https://rentcomputers.herokuapp.com/api/computers'
   httpOptions = {
     headers: new HttpHeaders({
        'Content-Type': 'application/json',
@@ -19,10 +20,18 @@ export class ComputersService {
   constructor(private authService: AuthService,
     private http: HttpClient,
   ) { }
+
+
+
   
   getComputers(): Observable<Computer[]>
   {
-    return this.http.get<Computer[]>(`${this.baseUrl}` );
+    let data = this.http.get<Computer[]>(`${this.baseUrl}`).pipe(
+            catchError(err => { 
+        return throwError(() => new Error(err.error.message || "Oops somethng went wrong."))
+      })
+    )
+    return data
   }
   getAComputer(id:string): Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/${id}`)
