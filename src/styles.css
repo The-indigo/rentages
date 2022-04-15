@@ -21,6 +21,10 @@ a {
   border: none;
 }
 
+.error-message {
+  text-align: center;
+}
+
 section {
   background: #EEF4F7;
   padding-top: 1rem;
