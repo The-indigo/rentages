@@ -11,13 +11,14 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
   user: User;
  authToken?: any;
-  private authUrl ='https://rentcomputers.herokuapp.com/api'
-    // 'http://192.168.1.9:80/api'
+  private authUrl ='http://192.168.1.26:80/api'
+    //'https://rentcomputers.herokuapp.com/api'
   httpOptions = {
     headers: new HttpHeaders({
        'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+      'Access-Control-Allow-Origin':'*',
+      'Access-control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+    
     })
   }
   constructor(private http: HttpClient, private jwtService: JwtHelperService) {
