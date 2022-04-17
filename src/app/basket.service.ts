@@ -8,7 +8,9 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class BasketService {
-  private baseUrl = 'http://192.168.1.26:80/api/basket'
+  private baseUrl =    'https://rentcomputers.herokuapp.com/api/basket'
+
+    //'http://192.168.1.26:80/api/basket'
 
   constructor(private authService: AuthService,
     private http: HttpClient,

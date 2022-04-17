@@ -8,8 +8,8 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class ComputersService {
-  private baseUrl = 'http://192.168.1.26:80/api/computers'
-    //'https://rentcomputers.herokuapp.com/api/computers'
+  private baseUrl = //'http://192.168.1.26:80/api/computers'
+    'https://rentcomputers.herokuapp.com/api/computers'
   
   
   constructor(private authService: AuthService,

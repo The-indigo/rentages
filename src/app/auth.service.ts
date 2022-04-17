@@ -11,8 +11,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
   user: User;
  authToken?: any;
-  private authUrl ='http://192.168.1.26:80/api'
-    //'https://rentcomputers.herokuapp.com/api'
+  private authUrl =
+    //'http://192.168.1.26:80/api'
+    'https://rentcomputers.herokuapp.com/api'
   httpOptions = {
     headers: new HttpHeaders({
        'Content-Type': 'application/json',
