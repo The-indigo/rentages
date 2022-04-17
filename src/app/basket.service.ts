@@ -43,6 +43,17 @@ export class BasketService {
   getAllBaskets(): Observable<any> {
   let data=this.http.get<any>(`${this.baseUrl}/all`)
   return data;
-}
   }
+  deleteItemFromBasket(id:any): Observable < any > {
+    this.authService.loadToken();
+   let data = this.http.get<any>(`${this.baseUrl}/delete/${id}`, this.authService.httpOptions).pipe(
+     catchError(err => { 
+              console.log('err', err)
+        return throwError(() => new Error(err.error.message || "Oops somethng went wrong But we can fix this."))
+      })
+   )
+    return data
+  }
+  }
+
 

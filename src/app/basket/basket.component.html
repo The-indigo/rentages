@@ -1,6 +1,6 @@
 <h3>Your Basket</h3>
 <div>
-  <div *ngIf="basketItems.length===0">
+  <div *ngIf="basketItems?.length===0">
     <p>You have no items in your basket yet</p>
   </div>
   <div *ngFor="let basket of basketItems ">
@@ -28,7 +28,7 @@
 
 
       </div>
-      <button>Remove</button>
+      <button (click)=" deleteItem(basket._id)">Remove</button>
     </div>
     <hr>
 

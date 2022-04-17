@@ -8,7 +8,7 @@ import { BasketService } from '../basket.service';
 })
 export class BasketComponent implements OnInit {
 
-  basketItems: any;
+  basketItems?:any[];
   isLoading= false
 
   constructor(private basketService: BasketService) { }
@@ -24,6 +24,11 @@ export class BasketComponent implements OnInit {
     this.basketService.getAllBaskets().subscribe(data => {
       console.log(data)
            
+    })
+      }
+  deleteItem(id:any): void{
+    this.basketService.deleteItemFromBasket(id).subscribe(data => {
+     this.basketItems= this.basketItems?.filter((n:any)=>n._id!==id)
     })
   }
 
