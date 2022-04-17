@@ -8,7 +8,8 @@ import { BasketService } from '../basket.service';
 })
 export class BasketComponent implements OnInit {
 
-  basketItems?:any[];
+  basketItems?: any[];
+  total:number=0
   isLoading= false
 
   constructor(private basketService: BasketService) { }
@@ -16,6 +17,9 @@ export class BasketComponent implements OnInit {
           this.isLoading=true
     this.basketService.getBasket().subscribe(data => {
       this.basketItems = data
+      this.total = this.basketItems?.reduce(function (a: any, b: any) {
+        return a + b.device.price
+      }, 0)
       console.log(this.basketItems)
             this.isLoading=false
     })
@@ -28,12 +32,16 @@ export class BasketComponent implements OnInit {
       }
   deleteItem(id:any): void{
     this.basketService.deleteItemFromBasket(id).subscribe(data => {
-     this.basketItems= this.basketItems?.filter((n:any)=>n._id!==id)
+      this.basketItems = this.basketItems?.filter((n: any) => n._id !== id)
+          this.total = this.basketItems?.reduce(function (a: any, b: any) {
+        return a + b.device.price
+      }, 0)
     })
   }
 
   ngOnInit(): void {
-     this.getBasketItems()
+    this.getBasketItems()
+    
   }
 
 }
