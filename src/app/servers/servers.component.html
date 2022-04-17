@@ -7,7 +7,7 @@
       <p>{{server.price}}</p>
       <p>{{server.inUse}}</p>
       <a class="see-more" routerLink="/computers/{{server._id}}"> See more</a>
-      <span *ngIf="isLoggedIn"><button class="add-button">Add to Rentals</button></span>
+      <span *ngIf="isLoggedIn"><button class="add-button" (click)="addToBasket(server)">Add to Rentals</button></span>
 
     </div>
   </div>
