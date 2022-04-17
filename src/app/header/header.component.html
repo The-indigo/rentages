@@ -18,6 +18,7 @@
         <a class="nav-link" routerLink="/servers">Servers</a>
       </div>
       <div class="navigate">
+        <a *ngIf='isLoggedIn' routerLink="/basket" class="nav-link">Basket</a>
         <a *ngIf='isLoggedIn' (click)='logout()' class="nav-link auth-button">Logout</a>
         <a *ngIf='!isLoggedIn' class="auth-button nav-link  " role="button" routerLink="/login">Log In</a>
         <a *ngIf='!isLoggedIn' class="auth-button signup" role="button" routerLink="/signup">Sign Up</a>

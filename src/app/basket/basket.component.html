@@ -1,0 +1,41 @@
+<h3>Your Basket</h3>
+<div>
+  <div *ngIf="basketItems.length===0">
+    <p>You have no items in your basket yet</p>
+  </div>
+  <div *ngFor="let basket of basketItems ">
+
+    <div class="basket-item">
+      <div class="basket-image-div">
+        <img src={{basket.device.imageUrl}} alt="">
+      </div>
+
+      <div class="basket-item-details">
+
+        <div class="basket-item-desc">
+          <p *ngIf="basket.device.isDesktop ">Desktop</p>
+          <p *ngIf="basket.device.isLaptop ">Laptop</p>
+          <p *ngIf="basket.device.isServer ">Server</p>
+
+          <p> <b>Price</b>: {{basket.device.price}}</p>
+        </div>
+
+        <div class="basket-item-total">
+          <h6>Total</h6>
+          <p>{{basket.device.price}}</p>
+        </div>
+
+
+
+      </div>
+      <button>Remove</button>
+    </div>
+    <hr>
+
+  </div>
+
+</div>
+
+<!-- src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y29tcHV0ZXJ8ZW58MHx8MHx8&w=1000&q=80" -->
+
+<!-- 623fb6613c43430608a161bc -->

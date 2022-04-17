@@ -15,19 +15,34 @@ export class BasketService {
   ) { }
 
 
+  getBasket(): Observable<any>
+  {
+    this.authService.loadToken()
+    let data = this.http.get<any>(this.baseUrl, this.authService.httpOptions).pipe(
+      catchError(err => { 
+              console.log(err)
+              return throwError(() => new Error(err.error.message || "Oops somethng went wrong But we can fix this."))
+      })
+    )
+    console.log(data)
+    return data
+  }
+
   addToBasket(computer: Computer, id:any,user:any): Observable<Computer>
  {
     this.authService.loadToken();
     let data = this.http.post<Computer>(`${this.baseUrl}/add/${id}`, { computer, user }, this.authService.httpOptions).pipe(
-     
      catchError(err => { 
               console.log('err', err)
         return throwError(() => new Error(err.error.message || "Oops somethng went wrong But we can fix this."))
       })
    )
     return data
-    
- }
-
+  }
+  
+  getAllBaskets(): Observable<any> {
+  let data=this.http.get<any>(`${this.baseUrl}/all`)
+  return data;
+}
   }
 

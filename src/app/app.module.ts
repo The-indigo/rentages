@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ComputerDetailComponent } from './computer-detail/computer-detail.component';
+import { BasketComponent } from './basket/basket.component';
 
 export function jwtTokenGetter(): string
 {
@@ -32,7 +33,8 @@ export function jwtTokenGetter(): string
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ComputerDetailComponent
+    ComputerDetailComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
