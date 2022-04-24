@@ -5,7 +5,9 @@
 <section *ngIf="!errorMessage && isLoading===false">
   <div class="computers">
     <div class="computer" *ngFor="let desktop of desktops">
-      <img class="computer-image" src={{desktop.imageUrl}} alt="">
+      <div class="computer-image-container">
+        <img class="computer-image" src={{desktop.imageUrl}} alt="">
+      </div>
       <p class="details-desc">{{desktop.description}}</p>
       <p class="computer-price">{{desktop.price}}</p>
       <p>{{desktop.inUse}}</p>

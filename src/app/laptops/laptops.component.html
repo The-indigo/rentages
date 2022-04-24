@@ -5,7 +5,10 @@
 <section *ngIf="!errorMessage && isLoading===false">
   <div class="computers">
     <div class="computer" *ngFor="let laptop of laptops">
-      <img class="computer-image" src={{laptop.imageUrl}} alt="">
+      <div class="computer-image-container">
+        <img class="computer-image" src={{laptop.imageUrl}} alt="">
+
+      </div>
       <p class="details-desc">{{laptop.description}}</p>
       <p class="computer-price">{{laptop.price}}</p>
       <p>{{laptop.inUse}}</p>

@@ -6,7 +6,9 @@
   <div class="computers">
 
     <div class="computer" *ngFor="let server of servers">
-      <img class="computer-image" src={{server.imageUrl}} alt="">
+      <div class="computer-image-container">
+        <img class="computer-image" src={{server.imageUrl}} alt="">
+      </div>
       <p class="details-desc">{{server.description}}</p>
       <p class="computer-price">{{server.price}}</p>
       <p>{{server.inUse}}</p>
