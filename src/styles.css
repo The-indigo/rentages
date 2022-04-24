@@ -43,14 +43,15 @@ section {
 
 .computer {
   background-color: white;
-  padding: 2rem;
   flex-basis: 30%;
   min-width: 20rem;
   text-align: center;
+  border: 2px solid red;
 }
 
 .computer-image {
-  width: 50%;
+  border: 2px solid yellow;
+  width: 100%;
 }
 
 .computer-price::before {

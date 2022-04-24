@@ -5,10 +5,11 @@
   box-sizing: border-box;
 }
 
-img {
+/* img {
+  border: 2px solid red;
   width: 7rem;
   height: 7rem;
-}
+} */
 
 header {
   /* background-color: aqua; */
