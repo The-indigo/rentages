@@ -6,7 +6,7 @@ section {
 .article-h5 {
   margin: 1rem 0;
   font-size: medium;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 h4 {
@@ -20,8 +20,13 @@ h4 {
   text-align: center;
 }
 
-.features {
+.features,
+.article-h5 {
   font-family: 'Playfair Display', serif;
+}
+
+.services {
+  padding: 1rem;
 }
 
 fa-icon {
