@@ -6,10 +6,10 @@
   <div class="computers">
     <div class="computer" *ngFor="let laptop of laptops">
       <img class="computer-image" src={{laptop.imageUrl}} alt="">
-      <p>{{laptop.description}}</p>
+      <p class="details-desc">{{laptop.description}}</p>
       <p class="computer-price">{{laptop.price}}</p>
       <p>{{laptop.inUse}}</p>
-      <a class="see-more" routerLink="/computers/{{laptop._id}}"> See more</a>
+      <!-- <a class="see-more" routerLink="/computers/{{laptop._id}}"> See more</a> -->
       <span *ngIf="isLoggedIn"><button class="add-button" (click)="addToBasket(laptop)">Add to Rentals</button></span>
 
     </div>

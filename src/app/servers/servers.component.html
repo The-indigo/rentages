@@ -7,10 +7,10 @@
 
     <div class="computer" *ngFor="let server of servers">
       <img class="computer-image" src={{server.imageUrl}} alt="">
-      <p>{{server.description}}</p>
+      <p class="details-desc">{{server.description}}</p>
       <p class="computer-price">{{server.price}}</p>
       <p>{{server.inUse}}</p>
-      <a class="see-more" routerLink="/computers/{{server._id}}"> See more</a>
+      <!-- <a class="see-more" routerLink="/computers/{{server._id}}"> See more</a> -->
       <span *ngIf="isLoggedIn"><button class="add-button" (click)="addToBasket(server)">Add to Rentals</button></span>
 
     </div>

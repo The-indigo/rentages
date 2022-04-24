@@ -57,6 +57,10 @@ section {
   content: '#';
 }
 
+.details-desc {
+  margin-top: 2rem;
+}
+
 .error-message {
   text-align: center;
 }
