@@ -6,23 +6,13 @@
   box-sizing: border-box;
 }
 
-
+/* body {
+  border: 2px solid red;
+  min-height: 100vh;
+} */
 
 a {
   text-decoration: none;
-}
-
-.add-button {
-  color: white;
-  background-color: #56c6c6;
-  margin-left: .55rem;
-  border-radius: .6rem;
-  padding: .5rem;
-  border: none;
-}
-
-.error-message {
-  text-align: center;
 }
 
 section {
@@ -32,9 +22,14 @@ section {
 
 }
 
-.computer-image {
-  /* height: 50%; */
-  width: 50%;
+
+.add-button {
+  color: white;
+  background-color: #56c6c6;
+  margin-left: .55rem;
+  border-radius: .6rem;
+  padding: .5rem;
+  border: none;
 }
 
 .computers {
@@ -51,6 +46,18 @@ section {
   padding: 2rem;
   flex-basis: 30%;
   min-width: 20rem;
+  text-align: center;
+}
+
+.computer-image {
+  width: 50%;
+}
+
+.computer-price::before {
+  content: '#';
+}
+
+.error-message {
   text-align: center;
 }
 

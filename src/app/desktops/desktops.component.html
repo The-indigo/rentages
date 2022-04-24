@@ -1,9 +1,13 @@
-<section *ngIf="isLoading===false">
+<div class="error-message" *ngIf="errorMessage">
+  <p>{{errorMessage}}</p>
+</div>
+
+<section *ngIf="!errorMessage && isLoading===false">
   <div class="computers">
     <div class="computer" *ngFor="let desktop of desktops">
       <img class="computer-image" src={{desktop.imageUrl}} alt="">
       <p>{{desktop.description}}</p>
-      <p>{{desktop.price}}</p>
+      <p class="computer-price">{{desktop.price}}</p>
       <p>{{desktop.inUse}}</p>
       <a class="see-more" routerLink="/computers/{{desktop._id}}"> See more</a>
       <span *ngIf="isLoggedIn"><button class="add-button" (click)="addToBasket(desktop)">Add to Rentals</button></span>
@@ -11,7 +15,8 @@
   </div>
   <hr>
 </section>
-<app-footer *ngIf="isLoading===false"></app-footer>
+
+<app-footer class="app-footer" *ngIf="isLoading===false"></app-footer>
 <div *ngIf="isLoading">
   <h4>isLoading......</h4>
 </div>

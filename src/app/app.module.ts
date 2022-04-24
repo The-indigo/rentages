@@ -15,7 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ComputerDetailComponent } from './computer-detail/computer-detail.component';
-import { BasketComponent } from './basket/basket.component';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 export function jwtTokenGetter(): string
 {
@@ -33,8 +33,7 @@ export function jwtTokenGetter(): string
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ComputerDetailComponent,
-    BasketComponent
+    ComputerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +41,7 @@ export function jwtTokenGetter(): string
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgHttpLoaderModule.forRoot(),
      JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter

@@ -28,7 +28,6 @@ export class LaptopsComponent implements OnInit {
     this.laptops = data.filter((n) => n.isLaptop == true)
       },
       error: (error) => {
-        console.log(`error gwtting lappy is`, error.message)
         this.errorMessage=error
       }
     })

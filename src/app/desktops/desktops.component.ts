@@ -12,17 +12,22 @@ import { ComputersService } from '../computers.service';
 export class DesktopsComponent implements OnInit {
 
   desktops: Computer[] = []
-  isLoading:boolean=false
+  isLoading: boolean = false
+    errorMessage?:string;
   constructor(private computerService:ComputersService, private basketService:BasketService, private authService:AuthService) { }
   isLoggedIn = this.authService.isloggedIn()
 
   getDesktops(): void{
-          this.isLoading=true
-    this.computerService.getComputers().subscribe(data => {
+    this.isLoading = true;
+    this.computerService.getComputers().subscribe({
+      next: (data) => {
       this.desktops = data.filter((n) => n.isDesktop == true)
-      console.log(this.desktops)
-            this.isLoading=false
+      },
+      error: (error) => {
+        this.errorMessage=error
+      }
     })
+       this.isLoading = false;
   }
 
   addToBasket(computer:Computer): void{
