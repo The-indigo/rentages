@@ -2,12 +2,11 @@
   <p>{{errorMessage}}</p>
 </div>
 
-<section *ngIf="!errorMessage && isLoading===false">
+<section [ngClass]="{'show':isLoading==false, 'hide':isLoading!==false }" *ngIf="!errorMessage && isLoading===false">
   <div class="computers">
     <div class="computer" *ngFor="let laptop of laptops">
       <div class="computer-image-container">
         <img class="computer-image" src={{laptop.imageUrl}} alt="">
-
       </div>
       <p class="details-desc">{{laptop.description}}</p>
       <p class="computer-price">{{laptop.price}}</p>
@@ -17,11 +16,6 @@
 
     </div>
   </div>
-  <hr>
 </section>
 
-<app-footer *ngIf="isLoading===false"></app-footer>
-
-<div *ngIf="isLoading">
-  <h4>isLoading......</h4>
-</div>
+<app-footer [ngClass]="{'show':isLoading==false, 'hide':isLoading!==false }"></app-footer>

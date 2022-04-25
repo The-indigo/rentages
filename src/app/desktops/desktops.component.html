@@ -2,7 +2,7 @@
   <p>{{errorMessage}}</p>
 </div>
 
-<section *ngIf="!errorMessage && isLoading===false">
+<section *ngIf="isLoading===false">
   <div class="computers">
     <div class="computer" *ngFor="let desktop of desktops">
       <div class="computer-image-container">
@@ -15,10 +15,7 @@
       <span *ngIf="isLoggedIn"><button class="add-button" (click)="addToBasket(desktop)">Add to Rentals</button></span>
     </div>
   </div>
-  <hr>
 </section>
-
-<app-footer class="app-footer" *ngIf="isLoading===false"></app-footer>
-<div *ngIf="isLoading">
-  <h4>isLoading......</h4>
+<div [ngClass]="{'show':isLoading==false, 'hide':isLoading!==false }">
+  <app-footer *ngIf="isLoading===false"></app-footer>
 </div>

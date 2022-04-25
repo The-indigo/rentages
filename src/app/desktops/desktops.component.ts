@@ -12,7 +12,7 @@ import { ComputersService } from '../computers.service';
 export class DesktopsComponent implements OnInit {
 
   desktops: Computer[] = []
-  isLoading: boolean = false
+  isLoading?: boolean 
     errorMessage?:string;
   constructor(private computerService:ComputersService, private basketService:BasketService, private authService:AuthService) { }
   isLoggedIn = this.authService.isloggedIn()
@@ -27,9 +27,13 @@ export class DesktopsComponent implements OnInit {
         this.errorMessage=error
       }
     })
-       this.isLoading = false;
+    setTimeout(() => {
+      this.isLoading = false;
+    },3000)
+      
   }
 
+ 
   addToBasket(computer:Computer): void{
     this.basketService.addToBasket(computer, computer._id,this.authService.user.id).subscribe(data => {
       console.log(data)
@@ -37,8 +41,7 @@ export class DesktopsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDesktops()
-    
+    this.getDesktops()    
   }
 
 }

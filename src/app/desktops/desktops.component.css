@@ -2,3 +2,11 @@ img {
   background-repeat: no-repeat;
   background-image: none;
 }
+
+.hide {
+  visibility: none;
+}
+
+.show {
+  visibility: visible;
+}

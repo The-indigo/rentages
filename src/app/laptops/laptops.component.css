@@ -5,3 +5,11 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
