@@ -87,3 +87,7 @@ button {
     margin-bottom: .4rem;
   }
 }
+
+.total {
+  font-weight: bold;
+}
