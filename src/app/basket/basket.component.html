@@ -17,7 +17,7 @@
           <p *ngIf="basket.device.isLaptop ">Laptop</p>
           <p *ngIf="basket.device.isServer ">Server</p>
 
-          <p class="computer-price"> <b>Price</b>: {{basket.device.price}}</p>
+          <p> <b>Price</b>: #{{basket.device.price}}</p>
         </div>
 
         <div class="basket-item-total">
@@ -25,10 +25,11 @@
           <p>{{basket.device.price}}</p>
         </div>
 
-
+      </div>
+      <div class="remove-button">
+        <button (click)=" deleteItem(basket._id)">Remove</button>
 
       </div>
-      <button (click)=" deleteItem(basket._id)">Remove</button>
     </div>
     <hr>
 
