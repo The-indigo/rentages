@@ -30,7 +30,6 @@ export class DesktopsComponent implements OnInit {
     setTimeout(() => {
       this.isLoading = false;
     },3000)
-      
   }
 
  

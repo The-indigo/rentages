@@ -4,38 +4,41 @@
   <div *ngIf="basketItems?.length===0">
     <p>You have no items in your basket yet</p>
   </div>
-  <div *ngFor="let basket of basketItems ">
 
-    <div class="basket-item">
-      <div class="basket-image-div">
-        <img src={{basket.device.imageUrl}} alt="">
-      </div>
+  <div *ngIf="isLoading==false">
+    <div *ngFor="let basket of basketItems ">
 
-      <div class="basket-item-details">
-
-        <div class="basket-item-desc">
-          <p *ngIf="basket.device.isDesktop ">Desktop</p>
-          <p *ngIf="basket.device.isLaptop ">Laptop</p>
-          <p *ngIf="basket.device.isServer ">Server</p>
-
-          <p> <b>Price</b>: #{{basket.device.price}}</p>
+      <div class="basket-item">
+        <div class="basket-image-div">
+          <img src={{basket.device.imageUrl}} alt="">
         </div>
 
-        <div class="basket-item-total">
-          <h6>Total</h6>
-          <p>{{basket.device.price}}</p>
+        <div class="basket-item-details">
+
+          <div class="basket-item-desc">
+            <p *ngIf="basket.device.isDesktop ">Desktop</p>
+            <p *ngIf="basket.device.isLaptop ">Laptop</p>
+            <p *ngIf="basket.device.isServer ">Server</p>
+
+            <p> <b>Price</b>: #{{basket.device.price}}</p>
+          </div>
+
+          <div class="basket-item-total">
+            <h6>Total</h6>
+            <p> #{{basket.device.price}}</p>
+          </div>
+
         </div>
+        <div class="remove-button">
+          <button (click)=" deleteItem(basket._id)">Remove</button>
 
+        </div>
       </div>
-      <div class="remove-button">
-        <button (click)=" deleteItem(basket._id)">Remove</button>
+      <hr>
 
-      </div>
     </div>
-    <hr>
-
   </div>
-  <h5>Total:{{total}}</h5>
+  <h5 *ngIf="isLoading==false && basketItems?.length!==0">Total:{{total}}</h5>
 
 </div>
 

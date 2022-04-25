@@ -13,7 +13,7 @@ export class BasketComponent implements OnInit {
   isLoading= false
 
   constructor(private basketService: BasketService) { }
-  
+
     getBasketItems(): void{
           this.isLoading=true
     this.basketService.getBasket().subscribe(data => {
@@ -21,9 +21,9 @@ export class BasketComponent implements OnInit {
       this.total = this.basketItems?.reduce(function (a: any, b: any) {
         return a + b.device.price
       }, 0)
-      console.log(this.basketItems)
-            this.isLoading=false
-    })
+    setTimeout(() => {
+      this.isLoading = false;
+    },3000)    })
     }
       getAll(): void{
     this.basketService.getAllBaskets().subscribe(data => {
