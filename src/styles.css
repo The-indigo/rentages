@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-/* body {
-  border: 2px solid red;
-  min-height: 100vh;
-} */
 
 a {
   text-decoration: none;
@@ -19,7 +15,7 @@ section {
   background: #EEF4F7;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-family: 'Montserrat',
+  font-family: 'Roboto',
     sans-serif;
 }
 
@@ -56,6 +52,12 @@ img {
 
 .computer-price::before {
   content: '#';
+}
+
+.computer-price {
+  font-family: 'Akshar', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
 }
 
 .details-desc {
