@@ -2,7 +2,7 @@
   <p>{{errorMessage}}</p>
 </div>
 
-<section *ngIf="isLoading===false">
+<section *ngIf="isLoading===false && !errorMessage">
   <div class="computers">
     <div class="computer" *ngFor="let desktop of desktops">
       <div class="computer-image-container">
@@ -16,6 +16,4 @@
     </div>
   </div>
 </section>
-<div [ngClass]="{'show':isLoading==false, 'hide':isLoading!==false }">
-  <app-footer *ngIf="isLoading===false"></app-footer>
-</div>
+<app-footer *ngIf="isLoading===false"></app-footer>
