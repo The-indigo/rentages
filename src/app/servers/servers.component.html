@@ -2,7 +2,7 @@
   <p>{{errorMessage}}</p>
 </div>
 
-<section [ngClass]="{'show':isLoading==false, 'hide':isLoading!==false }" *ngIf="!errorMessage && isLoading===false">
+<section *ngIf="!errorMessage && isLoading===false">
   <div class="computers">
 
     <div class="computer" *ngFor="let server of servers">
@@ -19,6 +19,3 @@
   </div>
 </section>
 <app-footer *ngIf="isLoading===false"></app-footer>
-<div *ngIf="isLoading">
-  <h4>isLoading......</h4>
-</div>

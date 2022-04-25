@@ -31,8 +31,10 @@ export class LaptopsComponent implements OnInit {
         this.errorMessage=error
       }
     })
-       this.isLoading = false;
-  }
+    setTimeout(() => {
+      this.isLoading = false;
+    },3000)
+        }
   
     addToBasket(computer:Computer): void{
     this.basketService.addToBasket(computer, computer._id,this.authService.user.id).subscribe(data => {
