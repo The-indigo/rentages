@@ -8,7 +8,8 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class BasketService {
-  private baseUrl =    'https://rentcomputers.herokuapp.com/api/basket'
+  private baseUrl = 'https://compurent-api.vercel.app/api/basket'
+  
 
     //'http://192.168.1.26:80/api/basket'
 

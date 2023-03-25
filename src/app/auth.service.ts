@@ -13,7 +13,7 @@ export class AuthService {
  authToken?: any;
   private authUrl =
     //'http://192.168.1.26:80/api'
-    'https://rentcomputers.herokuapp.com/api'
+    'https://compurent-api.vercel.app/api'
   httpOptions = {
     headers: new HttpHeaders({
        'Content-Type': 'application/json',

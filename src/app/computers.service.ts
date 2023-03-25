@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class ComputersService {
   private baseUrl = //'http://192.168.1.26:80/api/computers'
-    'https://rentcomputers.herokuapp.com/api/computers'
+    'https://compurent-api.vercel.app/computers'
   
   
   constructor(private authService: AuthService,
